@@ -16,7 +16,7 @@ export default function Logement({
   const [selectedId, setSelectedId] = useState(null);
 
   const newListeMaison = {
-    id: 20,
+    id: Math.floor(Math.random() * 1000), // Generate a random ID
     image:
       "https://www.roubaixxl.fr/wp-content/uploads/2019/03/roubaixmeconnue6_1.jpg",
     title: "Villa de Luxe",
