@@ -1,11 +1,13 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
-
+import { MdDelete } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
 export default function Image_logement({
   listing,
   onFavoriteChange,
   isFavorite,
   afficheLogement,
+  supprimerLogement,
 }) {
   const toggleFavorite = () => {
     onFavoriteChange(listing.id, !isFavorite);
@@ -18,6 +20,14 @@ export default function Image_logement({
         alt={listing.title}
         className="w-full h-48 object-cover"
       />
+      <div className="flex justify-between m-4 w-90">
+        <button onClick={() => afficheLogement(listing.id)}>
+          <FaEye className="text-2xl" />
+        </button>
+        <button onClick={() => supprimerLogement(listing.id)}>
+          <MdDelete className="text-2xl" />
+        </button>
+      </div>
       <div className="p-4">
         <h2 className="font-bold text-lg text-black">{listing.title}</h2>
         <p className="text-gray-600">{listing.location}</p>
@@ -30,10 +40,11 @@ export default function Image_logement({
         className="absolute bottom-2 right-2 p-1 rounded-full focus:outline-none"
       >
         <FaHeart
-          className={`h-6 w-6 ${isFavorite ? "text-pink-500" : "text-black"}`}
+          className={`h-4 w-4 mb-5 ${
+            isFavorite ? "text-pink-500" : "text-black"
+          }`}
         />
       </button>
-      <button onClick={() => afficheLogement(listing.id)}>Voir</button>
     </div>
   );
 }

@@ -87,6 +87,15 @@ const listeMaison = [
     location: "Strasbourg, France",
     price: "150",
   },
+
+  {
+    id: 12,
+    image:
+      "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2022/03/20/node_1155295/55156964/public/2022/03/20/B9730309810Z.1_20220320094052_000%2BG6TK4KOSC.1-0.jpg?itok=AHqwj_KN1647773325",
+    title: "Maison délabrée",
+    location: "Roubaix, France",
+    price: "1",
+  },
 ];
 
 export default listeMaison;

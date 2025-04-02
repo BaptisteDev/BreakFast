@@ -39,15 +39,18 @@ export default function Logement({
   function closeModal() {
     setIsOpen(false);
   }
-  function addLogement() {
-    setList([...listeMaison, newListeMaison]);
-  }
 
   function affciheLogement(id) {
     setSelectedId(id);
     setIsOpen(true);
   }
 
+  function supprimerLogement(id) {
+    setList(list.filter((item) => item.id !== id));
+  }
+  function addLogement() {
+    setList([...list, newListeMaison]);
+  }
   useEffect(() => {
     const filtered = listeMaison.filter((listing) =>
       listing.location.toLowerCase().includes(filter.toLowerCase())
@@ -85,6 +88,7 @@ export default function Logement({
                 listing={listing}
                 onFavoriteChange={onFavoriteChange}
                 isFavorite={favoriteList.includes(listing.id)}
+                supprimerLogement={() => supprimerLogement(listing.id)}
               />
             ))}
           </div>
